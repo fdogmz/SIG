@@ -1,0 +1,2 @@
+Nombre: Google Maps 
+url: https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}
