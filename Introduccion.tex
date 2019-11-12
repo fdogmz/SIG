@@ -1,0 +1,213 @@
+\documentclass{beamer}
+
+\usetheme{Berkeley}
+\usecolortheme{whale}
+
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{graphicx}
+
+\hypersetup{pdfpagemode=FullScreen}
+\pgfdeclareimage[height=1.0cm, width=1.0cm]{logo}{Logoucaribe.png}
+\logo{\pgfuseimage{logo}}
+
+\title{Sistemas de Información Geográfica}
+
+\author{Héctor Fernando Gómez}
+\institute{Universidad del Caribe\\ \tiny Cancún, México}
+\date{Abril, 2018}
+
+\begin{document}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\section{Sistema de información geográfica} 
+
+\begin{frame}
+	\frametitle{Algunas definiciones}		
+	
+	\begin{itemize}
+		\item{Un conjunto de herramientas para el almacenamiento, la
+recuperación, manipulación y análisis de datos espaciales (Marble 1984)}
+		\item{Un sistema de apoyo a la toma de decisiones que permite
+integrar datos georreferenciados en un ambiente de toma
+de decisiones (Cowen 1988)}
+		\item{Una actividad organizada por medio de la cual la gente
+mide y representa fenómenos geográficos (Chrisman 1999)}
+		\item{Es el conjunto de procesos, técnicas y tecnología que
+permiten utilizar información espacial para analizar datos y
+crear mapas (Freeman 2014)}
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Aplicaciones}
+
+	Algunas de las aplicaciones de los \textit{sistemas de información geográfica:}
+	
+	\begin{itemize}
+		\item{\textbf{Manejo de recursos naturales:} un SIG permite cuantificar los recursos naturales disponibles en algún ecosistema en particular}
+		\item{\textbf{Planeación y desarrollo urbano:} para la ubicación de instalaciones de servicio público como estaciones de bomberos y policías.}
+		\item{\textbf{Transporte: } para la identificación de rutas óptimas para la distribución de bienes y servicios}
+		\item{\textbf{Epidemiología:} un SIG puede permitir la identificación de factores ambientales que favorecen la difusión de diferenets enfermedades.}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Contenido del curso}
+
+	\begin{enumerate}
+		\item{Datos espaciales}
+		\item{Creación de conjuntos de datos espaciales}
+		\item{Herramientas de geoproceso}
+		\item{Análisis de terreno}
+		\item{Procesamiento de imágenes satelitales}
+		\item{Estadística espacial}
+	\end{enumerate}			
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Evaluación }
+
+	\begin{enumerate}
+		\item{Reporte de prácticas: \textbf{60} $\%$}
+		\item{Análisis de artículos sobre aplicaciones de SIG: \textbf{40} $\%$}
+	\end{enumerate}			
+	
+\end{frame}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\section{Datos espaciales}
+
+\begin{frame}
+	\frametitle{Dato espacial}
+	Un dato \textit{espacial} es una dupla compuesta de 
+	
+	\begin{enumerate}
+		\item{Objeto espacial (\textbf{geométrico})}
+		\item{Atributos (\textbf{variables de interés asociadas al objeto espacial})}
+	\end{enumerate}
+	
+	$$\texttt{Dato espacial = (Objeto espacial, Atributos)}$$
+		
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Tipos de objetos espaciales}
+	
+	Existen cuatro tipos de datos espaciales 
+
+	\begin{enumerate}
+		\item{Puntos}
+		\item{Líneas}
+		\item{Polígonos}
+		\item{Ráster}
+	\end{enumerate}	
+	
+	En $\texttt{QGIS}$ generalmente estos datos espaciales se leen a partir de archivos con extensión $\texttt{shp}$.
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tipos de atributos}
+
+	\begin{itemize}
+		\item{Numéricos}
+		\item{Categóricos}
+	\end{itemize}		
+	
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Software}
+	
+	Algunas opciones de sistemas de información geográfica:
+
+	\begin{itemize}
+		\item{$\texttt{ArcGIS}$}	
+		\item{$\texttt{GRASS}$}	
+		\item{$\texttt{QGIS}$}	
+	\end{itemize}
+	
+\end{frame}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\section{Introducción a QGIS} 
+
+\begin{frame}
+	\frametitle{Elementos de la interfaz gráfica}
+	
+	\begin{itemize}
+		\item{Canvas de mapas}
+		\item{Explorador/Panel de capas}
+		\item{Barra de herramientas}
+		\item{Barra de estado}
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Apertura de archivos.}
+
+	\begin{itemize}
+		\item{Capa poligonal}
+		\item{Capa de puntos}
+		\item{Capa de líneas}
+		\item{Capa ráster}
+		\item{Mapa de contexto}
+	\end{itemize}		
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tabla de atributos}
+
+	\begin{center}
+		\textbf{Tabla de atributos}
+	\end{center}
+	
+\end{frame}
+
+\end{document}
+
